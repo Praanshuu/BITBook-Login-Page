@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="BITBook.png" />
+    <title>BITBook</title>
+    <link rel="stylesheet" href="Signup.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta
+      name="google-signin-client_id"
+      content="YOUR_CLIENT_ID.apps.googleusercontent.com"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <div id="logo-box">
+        <div id="logo">
+          <img src="BITBook transparent.png" alt="LOGO" />
+        </div>
+        <div class="subTitle">
+          <h2>Happening now</h2>
+        </div>
+      </div>
+      <div id="login-box">
+        <h3>Join today.</h3>
+        <div class="login-options">
+          <div class="signin">
+            <div class="google">
+              <div
+                id="g_id_onload"
+                data-client_id="YOUR_CLIENT_ID"
+                data-login_uri="http://localhost:8000/auth/callback"
+                data-auto_prompt="false"
+              ></div>
+
+              <div
+                class="g_id_signin"
+                data-type="standard"
+                data-shape="rectangular"
+                data-theme="outline"
+                data-text="sign_up_with"
+                data-size="large"
+                data-logo_alignment="left"
+                data-height="40"
+              ></div>
+            </div>
+            <p class="or-text">or</p>
+            <div class="createAccount">
+              <p>Create Account</p>
+            </div>
+          </div>
+          <div class="login">
+            <p>Already have an account?</p>
+            <div class="login-btn">
+              <p id="openLoginModal">Login</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- create account Modal -->
+    <div id="createAccountModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Create Account</h2>
+        <form id="createAccountForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Create Account</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <!--  -->
+        <div class="google">
+          <div
+            id="g_id_onload"
+            data-client_id="YOUR_CLIENT_ID"
+            data-login_uri="http://localhost:8000/auth/callback"
+            data-auto_prompt="false"
+          ></div>
+
+          <div
+            class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="sign_up_with"
+            data-size="large"
+            data-logo_alignment="left"
+            data-height="40"
+          ></div>
+        </div>
+        <!--  -->
+        <p class="or-text">or</p>
+        <form id="loginForm">
+          <label for="username">Username/ email:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="messageWindow" class="message-window">
+      <div class="message-content">
+        <span class="close" onclick="closeMessage()">×</span>
+        <h3>Welcome to BITBook!</h3>
+        <p>Join discussions, stay updated on events, and build your college network effortlessly.</p>
+      </div>
+    </div>
+
+    <script src="Signup.js"></script>
+  </body>
+</html>
